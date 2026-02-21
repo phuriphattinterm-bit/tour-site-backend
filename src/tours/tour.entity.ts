@@ -14,7 +14,7 @@ export class Tour {
     @Column({type: 'text'})
     long_description: string;
 
-    @Column()
+    @Column({length: 255})
     image_url: string;
 
     @Column({type: 'decimal', precision: 10, scale: 2})

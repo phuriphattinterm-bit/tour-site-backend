@@ -17,7 +17,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: process.env.DB_USERNAME ?? 'root',
       password: process.env.DB_PASSWORD ?? '123456789',
       database: process.env.DB_NAME ?? 'toursite',
-      entities: [tour],
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: false,
     }),
     ToursModule,
