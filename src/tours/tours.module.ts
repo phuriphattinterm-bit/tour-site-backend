@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Tour } from './tour.entity';
 
 @Module({
+  imports: [TypeOrmModule.forRoot([Tour])],
   controllers: [ToursController],
   providers: [ToursService]
 })
