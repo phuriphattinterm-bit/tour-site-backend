@@ -15,7 +15,7 @@ export class ToursService {
     }
 
     // Read: Get a single tour
-    async find(id: number): Promise<Tour> {
+    async findOne(id: number): Promise<Tour> {
         const tour = await this.toursRepository.findOneBy({ id })
         if (!tour) {
             throw new NotFoundException(`Tour with ID ${id} is not found`);
