@@ -6,11 +6,14 @@ export class User {
     id: number;
 
     @Column({length:100})
-    first_name: string;
+    username: string;
 
     @Column({length:100})
-    last_name: string;
+    password: string;
 
     @Column({unique:true})
     email: string;
+
+    @Column()
+    admin: boolean;
 }
