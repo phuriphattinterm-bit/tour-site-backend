@@ -11,7 +11,7 @@ export class UsersController {
     ) { }
 
     @Get(':id')
-    find(@Param() id: string): Promise<User> {
+    find(@Param('id') id: string): Promise<User> {
         return this.usersService.findOne(parseInt(id));
     }
 
@@ -33,12 +33,12 @@ export class UsersController {
     }
 
     @Put(':id')
-    update(@Param() id: string, @Body() user: User): Promise<User> {
+    update(@Param('id') id: string, @Body() user: User): Promise<User> {
         return this.usersService.update(parseInt(id), user);
     }
 
     @Delete(':id')
-    remove(@Param() id: string): Promise<void> {
+    remove(@Param('id') id: string): Promise<void> {
         return this.usersService.remove(parseInt(id));
     }
 }
